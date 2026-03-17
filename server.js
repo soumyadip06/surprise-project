@@ -1,4 +1,5 @@
 function yesAnswer() {
+    console.log("Starting server...");
   console.log("Button clicked");
 
   fetch("http://localhost:3000/response", {
@@ -19,5 +20,11 @@ function yesAnswer() {
   .catch(err => {
     console.error("Error:", err);
     alert("Something went wrong 😢");
+
+    const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log("Server running on port " + PORT);
+});
   });
 }
